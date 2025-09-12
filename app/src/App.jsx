@@ -156,6 +156,17 @@ export default function App() {
           </div>
         </section>
       </div>
+
+      <footer className="mt-16 border-t border-neutral-200">
+        <div className="mx-auto max-w-6xl px-4 py-6 text-sm text-neutral-600 flex flex-col md:flex-row items-center justify-between">
+          <p className="text-center md:text-left">© 2024 MagicOps — The future thinker's AI readiness tool. All rights reserved.</p>
+          <div className="flex gap-6 mt-2 md:mt-0">
+            <a href="#" className="hover:underline">Get in touch</a>
+            <a href="#assessment" className="hover:underline">Start the assessment</a>
+          </div>
+        </div>
+      </footer>
+
     </main>
   )
 }
