@@ -31,7 +31,6 @@ export default function App() {
               src="/logo.webp"
               alt="The Future Thinker logo"
               className="h-7 w-7 rounded-md object-cover"
-              loading="eager"
               decoding="async"
             />
             <span className="font-medium tracking-tight">The Future Thinker</span>
