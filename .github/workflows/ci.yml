@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: package-lock.json
+          cache-dependency-path: app/package-lock.json
 
       - name: Install dependencies
         run: npm ci
@@ -44,8 +44,8 @@ jobs:
 
       - name: Check coverage threshold
         run: |
-          COVERAGE=$(npx --yes nyc report --reporter=text-summary | grep 'Statements' | awk '{print $4}' | sed 's/%//')
-          THRESHOLD=80
+          COVERAGE=$(npx --yes nyc report --reporter=text-summary | grep 'Statements' | awk '{print int($4)}')
+          THRESHOLD=${COVERAGE_THRESHOLD:-80}
           if [ "$(echo "$COVERAGE < $THRESHOLD" | bc)" -eq 1 ]; then
             echo "Test coverage ($COVERAGE%) is below threshold ($THRESHOLD%)"
             exit 1
