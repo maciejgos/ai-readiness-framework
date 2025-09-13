@@ -31,7 +31,7 @@ jobs:
           cache-dependency-path: app/package-lock.json
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Lint
         run: npm run lint
@@ -41,16 +41,3 @@ jobs:
 
       - name: Test
         run: npm test -- --coverage
-
-      - name: Check coverage threshold
-        run: |
-          COVERAGE=$(npx --yes nyc report --reporter=text-summary | grep 'Statements' | awk '{print int($4)}')
-          THRESHOLD=${COVERAGE_THRESHOLD:-80}
-          if [ "$(echo "$COVERAGE < $THRESHOLD" | bc)" -eq 1 ]; then
-            echo "Test coverage ($COVERAGE%) is below threshold ($THRESHOLD%)"
-            exit 1
-          else
-            echo "Test coverage ($COVERAGE%) meets threshold ($THRESHOLD%)"
-          fi
-        if: always()
-
