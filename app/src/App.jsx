@@ -27,7 +27,13 @@ export default function App() {
       <header className="sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-neutral-200">
         <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="h-6 w-6 rounded-full bg-black" aria-hidden />
+            <img
+              src="/logo.webp"
+              alt="The Future Thinker logo"
+              className="h-7 w-7 rounded-md object-cover"
+              loading="eager"
+              decoding="async"
+            />
             <span className="font-medium tracking-tight">The Future Thinker</span>
           </div>
           <a className="inline-flex items-center gap-2 rounded-full border border-neutral-300 px-4 py-2 text-sm hover:bg-neutral-100 transition" href="#">
