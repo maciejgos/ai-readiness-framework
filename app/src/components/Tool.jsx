@@ -27,12 +27,17 @@ export default function Tool() {
       <section id="tool" className="py-16 md:py-20">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
-            <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight">AI Readiness for SMBs</h1>
-            <p className="mt-4 text-lg text-neutral-600">A calm, practical assessment that shows how ready your company is to pilot AI safely and get value in weeks, not years.</p>
+            <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">Readiness diagnostic</p>
+            <h1 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight leading-tight text-neutral-900">
+              Benchmark your automation program before you invest the next euro
+            </h1>
+            <p className="mt-4 text-lg text-neutral-600">
+              A calm, numbers-first assessment that highlights strengths, gaps, and governance risks so you can launch agentic automations with confidence.
+            </p>
             <ul className="mt-6 space-y-2 text-neutral-700">
-              <li className="flex items-start gap-3">✅ 10–12 minutes, plain language</li>
-              <li className="flex items-start gap-3">✅ Score by section + overall readiness %</li>
-              <li className="flex items-start gap-3">✅ Summary + next steps + option to book a call</li>
+              <li className="flex items-start gap-3">✅ 12-minute survey designed for product, operations, and compliance leads</li>
+              <li className="flex items-start gap-3">✅ Section-by-section maturity scores plus an overall readiness band</li>
+              <li className="flex items-start gap-3">✅ Recommended actions tied to ROI, risk posture, and human-in-the-loop design</li>
             </ul>
           </div>
           <div className="rounded-3xl border border-neutral-200 p-6 md:p-8 bg-neutral-50/50">
@@ -43,7 +48,12 @@ export default function Tool() {
             <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-neutral-200">
               <div className="h-full bg-black transition-all" style={{ width: progressPercent + '%' }} />
             </div>
-            <a href="#assessment" className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-black px-5 py-3 text-white hover:opacity-90 transition">Start Assessment →</a>
+            <a
+              href="#assessment"
+              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-neutral-900 px-5 py-3 text-white hover:opacity-90 transition"
+            >
+              Start the diagnostic →
+            </a>
           </div>
         </div>
       </section>
@@ -87,7 +97,8 @@ export default function Tool() {
       <section className="pb-32">
         <div className="rounded-3xl border border-neutral-200 p-6 md:p-10 bg-neutral-50/40">
           <div className="flex flex-wrap items-end gap-4">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Your AI Readiness Summary</h2>
+            <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">Summary</p>
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-neutral-900">Your readiness snapshot</h2>
             <div className={`ml-auto rounded-full px-4 py-1.5 text-sm border border-neutral-200 ${bandClasses}`}>{band.label}</div>
           </div>
           <div className="mt-6 grid md:grid-cols-4 gap-6">
@@ -112,32 +123,37 @@ export default function Tool() {
           </div>
           <div className="mt-8 grid md:grid-cols-3 gap-6">
             <div className="rounded-2xl border border-neutral-200 bg-white p-5">
-              <h3 className="font-medium">What this means</h3>
+              <h3 className="font-medium text-neutral-900">Interpretation</h3>
               <p className="mt-2 text-sm text-neutral-700">{band.guidance}</p>
             </div>
             <div className="rounded-2xl border border-neutral-200 bg-white p-5">
-              <h3 className="font-medium">Suggested next step</h3>
+              <h3 className="font-medium text-neutral-900">Where to focus next</h3>
               <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700 space-y-1">
-                <li>Baseline 1–2 KPIs for your target process</li>
-                <li>Confirm tenant and data sources (Drive/SharePoint, CRM/ERP)</li>
-                <li>Book a 20‑min call to plan a 2‑week Readiness Sprint</li>
+                <li>Confirm the KPI and human-in-the-loop checkpoints for your top use case</li>
+                <li>Close governance or data gaps that block a 6–8 week launch</li>
+                <li>Decide on the engagement model that keeps ownership in your tenant</li>
               </ul>
             </div>
             <div className="rounded-2xl border border-neutral-200 bg-white p-5">
-              <h3 className="font-medium">What you’ll receive</h3>
+              <h3 className="font-medium text-neutral-900">What we’ll prepare</h3>
               <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700 space-y-1">
-                <li>Mini AI policy + DPIA‑lite templates</li>
-                <li>Top 3 quick wins with effort/impact</li>
-                <li>Pilot plan (6–8 weeks) and fixed price</li>
+                <li>Executive-ready summary deck and benchmark position</li>
+                <li>Priority initiatives with ROI, complexity, and guardrail notes</li>
+                <li>Engagement options—from one sprint to fractional leadership</li>
               </ul>
             </div>
           </div>
           <div className="mt-10 flex flex-col md:flex-row items-center gap-4">
-            <a className="inline-flex items-center gap-2 rounded-2xl bg-black px-6 py-3 text-white hover:opacity-90 transition" href="#">Book a 20‑min call →</a>
+            <a
+              className="inline-flex items-center gap-2 rounded-2xl bg-neutral-900 px-6 py-3 text-white hover:opacity-90 transition"
+              href="#contact"
+            >
+              Schedule a findings review →
+            </a>
             <div className="flex items-center gap-4 text-sm text-neutral-700">
-              <a className="inline-flex items-center gap-2 hover:underline" href="#">✉️ <span>hello@thefuturethinker.com</span></a>
+              <a className="inline-flex items-center gap-2 hover:underline" href="mailto:hello@thefuturethinker.com">✉️ <span>hello@thefuturethinker.com</span></a>
               <span className="hidden md:inline">•</span>
-              <a className="hover:underline" href="#">☎️ <span>+48 600 000 000</span></a>
+              <a className="hover:underline" href="tel:+48600000000">☎️ <span>+48 600 000 000</span></a>
             </div>
           </div>
         </div>
