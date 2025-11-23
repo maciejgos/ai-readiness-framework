@@ -4,6 +4,7 @@ export default function NavBar({ active = 'tool' }) {
     { href: '#services', label: 'Services', key: 'services' },
     { href: '#manifesto', label: 'Manifesto', key: 'manifesto' },
     { href: '#approach', label: 'Approach', key: 'approach' },
+    { href: '#blog', label: 'Blog', key: 'blog' },
     { href: '#tool', label: 'Diagnostic', key: 'tool' },
     { href: '#contact', label: 'Start a project', key: 'contact' },
   ]
