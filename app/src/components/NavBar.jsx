@@ -1,9 +1,11 @@
 export default function NavBar({ active = 'tool' }) {
   const links = [
-    { href: '#home', label: 'Home', key: 'home' },
-    { href: 'https://www.thefuturethinker.com/newsletter', label: 'Newsletter', external: true, key: 'newsletter' },
+    { href: '#home', label: 'Overview', key: 'home' },
     { href: '#services', label: 'Services', key: 'services' },
-    { href: '#tool', label: 'AI Readiness Tool', key: 'tool' },
+    { href: '#manifesto', label: 'Manifesto', key: 'manifesto' },
+    { href: '#approach', label: 'Approach', key: 'approach' },
+    { href: '#tool', label: 'Diagnostic', key: 'tool' },
+    { href: '#contact', label: 'Start a project', key: 'contact' },
   ]
 
   return (
@@ -15,8 +17,8 @@ export default function NavBar({ active = 'tool' }) {
               href={href}
               target={external ? '_blank' : undefined}
               rel={external ? 'noopener noreferrer' : undefined}
-              className={`px-2 py-1 rounded-md transition hover:text-black hover:bg-neutral-100/70 ${
-                key === active ? 'text-black bg-neutral-100/70' : 'text-neutral-700'
+              className={`px-3 py-1.5 rounded-full transition hover:text-black hover:bg-neutral-100/80 ${
+                key === active ? 'text-black bg-neutral-100/80' : 'text-neutral-700'
               }`}
             >
               {label}
