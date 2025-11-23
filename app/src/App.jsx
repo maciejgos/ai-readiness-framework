@@ -3,10 +3,13 @@ import NavBar from './components/NavBar.jsx'
 import Home from './components/Home.jsx'
 import Tool from './components/Tool.jsx'
 import Services from './components/Services.jsx'
+import Blog from './components/Blog.jsx'
 
 export default function App() {
-  const getRoute = () => (typeof window !== 'undefined' && window.location.hash ? window.location.hash.replace('#', '') : 'home')
+  const getRoute = () =>
+    typeof window !== 'undefined' && window.location.hash ? window.location.hash.replace('#', '') : 'home'
   const [route, setRoute] = useState(getRoute())
+  const primaryRoute = route.split('/')[0]
 
   useEffect(() => {
     const onHashChange = () => setRoute(getRoute())
@@ -16,7 +19,7 @@ export default function App() {
 
   useEffect(() => {
     const hash = window.location.hash
-    if (!hash) {
+    if (!hash || hash.startsWith('#blog')) {
       window.scrollTo({ top: 0, behavior: 'smooth' })
       return
     }
@@ -34,13 +37,16 @@ export default function App() {
     })
   }, [route])
 
-  const showTool = route === 'tool' || route === 'assessment'
-  const showServices = route === 'services'
+  const showTool = primaryRoute === 'tool' || primaryRoute === 'assessment'
+  const showServices = primaryRoute === 'services'
+  const showBlog = primaryRoute === 'blog'
   const secondaryRoutes = ['approach', 'contact', 'manifesto']
   const activeNav = showTool
     ? 'tool'
     : showServices
     ? 'services'
+    : showBlog
+    ? 'blog'
     : secondaryRoutes.includes(route)
     ? route
     : 'home'
@@ -74,7 +80,7 @@ export default function App() {
       </header>
 
       <div className="mx-auto max-w-6xl px-4">
-        {showTool ? <Tool /> : showServices ? <Services /> : <Home />}
+        {showBlog ? <Blog route={route} /> : showTool ? <Tool /> : showServices ? <Services /> : <Home />}
       </div>
 
       <footer className="mt-20 border-t border-neutral-200">
